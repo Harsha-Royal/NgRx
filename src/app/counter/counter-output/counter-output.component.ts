@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {Store} from '@ngrx/store'
+import {Store} from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { CounterState } from '../state/counter.state';
 @Component({
