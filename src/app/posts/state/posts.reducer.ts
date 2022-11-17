@@ -1,6 +1,6 @@
 import {createReducer,on} from "@ngrx/store";
 import { InitialState } from "./posts.state";
-import { addPost, updatePost } from "./posts.action";
+import { addPost, deletePost, updatePost } from "./posts.action";
 
 const _postsReducer = createReducer(InitialState
     ,on(addPost,(state,action)=>
@@ -22,6 +22,17 @@ const _postsReducer = createReducer(InitialState
         posts : updatedposts
       }
     })
+   
+    , on(deletePost, (state, { id }) => {
+        const updatedPosts = state.posts.filter((post) => {
+          return post.id !== id;
+        });
+    
+        return {
+       
+          posts: updatedPosts,
+        };
+      })
 );
 
 export function postsReducer(state,action){
