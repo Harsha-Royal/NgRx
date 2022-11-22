@@ -20,16 +20,22 @@ import { AddPostComponent } from './posts/add-post/add-post.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditPostComponent } from './posts/edit-post/edit-post.component';
 import { LoginComponent } from './auth/login/login.component';
+import { LoadingSpinnerComponent } from './shared/component/loading-spinner/loading-spinner.component';
+import { SignupComponent } from './auth/sign-up/sign-up.component';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoadingSpinnerComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    RouterModule,
     ReactiveFormsModule,
     StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({
